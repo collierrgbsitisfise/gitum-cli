@@ -1,0 +1,25 @@
+{
+  "name": "gitum-cli",
+  "version": "1.0.0",
+  "description": "git user management cli tool",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collierrgbsitisfise/gitum-cli.git"
+  },
+  "keywords": [
+    "git",
+    "cli",
+    "user",
+    "management"
+  ],
+  "author": "vadim nicolaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/collierrgbsitisfise/gitum-cli/issues"
+  },
+  "homepage": "https://github.com/collierrgbsitisfise/gitum-cli#readme"
+}
