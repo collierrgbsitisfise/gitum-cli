@@ -4,7 +4,8 @@
   "description": "git user management cli tool",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "./node_modules/.bin/eslint app.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,15 @@
   "bugs": {
     "url": "https://github.com/collierrgbsitisfise/gitum-cli/issues"
   },
-  "homepage": "https://github.com/collierrgbsitisfise/gitum-cli#readme"
+  "homepage": "https://github.com/collierrgbsitisfise/gitum-cli#readme",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-google": "^0.13.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "git add . &&  npm run eslint",
+      "pre-push": "echo 'here i will run unit tests'"
+    }
+  }
 }
