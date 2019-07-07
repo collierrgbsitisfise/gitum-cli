@@ -24,13 +24,19 @@
   },
   "homepage": "https://github.com/collierrgbsitisfise/gitum-cli#readme",
   "devDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-config-google": "^0.13.0"
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2"
   },
   "husky": {
     "hooks": {
       "pre-commit": "git add . &&  npm run eslint",
       "pre-push": "echo 'here i will run unit tests'"
     }
+  },
+  "dependencies": {
+    "commander": "^2.20.0"
   }
 }
