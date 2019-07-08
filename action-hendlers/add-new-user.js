@@ -1,6 +1,5 @@
-/* eslint-disable no-console */
+const { lowDBService } = require('./../services');
+
 module.exports = (userName, userEmail) => {
-  console.log('Add new gitum user');
-  console.log('userName : ', userName);
-  console.log('userEmail : ', userEmail);
+  lowDBService.addNewUesr(userName, userEmail);
 };

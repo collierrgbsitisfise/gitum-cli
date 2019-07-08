@@ -2,6 +2,7 @@
 const commander = require('commander');
 const {
   addNewUser,
+  getUsers,
 } = require('./action-hendlers');
 
 commander
@@ -14,5 +15,8 @@ commander
   .command('new <userName> <userEmail>')
   .action(addNewUser);
 
+commander
+  .command('list')
+  .action(getUsers);
 
 commander.parse(process.argv);
