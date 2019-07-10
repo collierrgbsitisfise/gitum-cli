@@ -17,7 +17,15 @@ commander
   .action(addNewUser);
 
 commander
+  .command('n <userName> <userEmail>')
+  .action(addNewUser);
+
+commander
   .command('current')
+  .action(getCurrentUser);
+
+commander
+  .command('c')
   .action(getCurrentUser);
 
 commander
