@@ -32,4 +32,8 @@ commander
   .command('list')
   .action(getUsers);
 
+commander
+  .command('l')
+  .action(getUsers);
+
 commander.parse(process.argv);
