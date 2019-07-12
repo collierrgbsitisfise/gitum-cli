@@ -22,6 +22,24 @@ class LowDbService {
       .cloneDeep()
       .value();
   }
+
+  deleteByUserNameOrEmail(input) {
+    const value = this.db.get('users').find(
+      ({ userName, userEmail }) => input === userName || input === userEmail,
+    ).value();
+
+    if (!value) {
+      // eslint-disable-next-line no-console
+      console.log('incorrect username/email');
+      return;
+    }
+
+    const { userEmail } = value;
+    this.db.get('users').remove({ userEmail }).write();
+
+    // eslint-disable-next-line no-console
+    console.log(` ${input} was removed !`);
+  }
 }
 
 module.exports = new LowDbService();

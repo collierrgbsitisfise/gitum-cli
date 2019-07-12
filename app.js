@@ -4,6 +4,7 @@ const {
   addNewUser,
   getUsers,
   getCurrentUser,
+  removeUser,
 } = require('./action-hendlers');
 
 commander
@@ -19,6 +20,10 @@ commander
 commander
   .command('n <userName> <userEmail>')
   .action(addNewUser);
+
+commander
+  .command('delete <userNameOrEmail>')
+  .action(removeUser);
 
 commander
   .command('current')
