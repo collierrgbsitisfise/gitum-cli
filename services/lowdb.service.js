@@ -23,22 +23,14 @@ class LowDbService {
       .value();
   }
 
-  deleteByUserNameOrEmail(input) {
-    const value = this.db.get('users').find(
+  findUserByUserNameOrEmail(input) {
+    return this.db.get('users').find(
       ({ userName, userEmail }) => input === userName || input === userEmail,
     ).value();
+  }
 
-    if (!value) {
-      // eslint-disable-next-line no-console
-      console.log('incorrect username/email');
-      return;
-    }
-
-    const { userEmail } = value;
+  deleteByEmail(userEmail) {
     this.db.get('users').remove({ userEmail }).write();
-
-    // eslint-disable-next-line no-console
-    console.log(` ${input} was removed !`);
   }
 }
 
