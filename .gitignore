@@ -1,1 +1,3 @@
 node_modules/
+# low db data
+data/db.json
