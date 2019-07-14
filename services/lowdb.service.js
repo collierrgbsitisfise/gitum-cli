@@ -29,6 +29,12 @@ class LowDbService {
     ).value();
   }
 
+  findUserByUserNameAndEmail(inputUserName, inputUserEmail) {
+    return this.db.get('users').find(
+      ({ userName, userEmail }) => inputUserName === userName && inputUserEmail === userEmail,
+    ).value();
+  }
+
   deleteByEmail(userEmail) {
     this.db.get('users').remove({ userEmail }).write();
   }
