@@ -14,6 +14,12 @@ commander
   });
 
 commander
+  .command('h')
+  .action(() => {
+    console.log('Help Docs');
+  });
+
+commander
   .command('new <userName> <userEmail>')
   .action(addNewUser);
 
@@ -23,6 +29,10 @@ commander
 
 commander
   .command('delete <userNameOrEmail>')
+  .action(removeUser);
+
+commander
+  .command('d <userNameOrEmail>')
   .action(removeUser);
 
 commander
