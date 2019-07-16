@@ -27,6 +27,10 @@ class LowDbService {
     return this.db.get('users').find({ alias }).value();
   }
 
+  findUserByUserNameAndEmail(userName, userEmail) {
+    return this.db.get('users').find({ userName, userEmail }).value();
+  }
+
   deleteByEmail(alias) {
     this.db.get('users').remove({ alias }).write();
   }

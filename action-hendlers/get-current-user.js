@@ -1,10 +1,22 @@
 /* eslint-disable no-console */
 const { getCurrentGitUser } = require('./../utils');
+const { lowDBService } = require('./../services');
+
+const defaultAlias = 'main';
 
 module.exports = async () => {
   const {
     userName,
     userEmail,
   } = await getCurrentGitUser();
-  console.log(`️️✔️  username: ${userName} | email: ${userEmail}`);
+
+  const value = lowDBService.findUserByUserNameAndEmail(userName, userEmail);
+
+  const alias = value ? value.alias : defaultAlias;
+
+  if (!value) {
+    lowDBService.addNewUesr(userName, userName, alias);
+  }
+
+  console.log(`️️✔️  alias: ${alias} | username: ${userName} | email: ${userEmail}`);
 };
