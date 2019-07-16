@@ -6,13 +6,13 @@ module.exports = async () => {
   const userList = lowDBService.getUsersList();
   const currentGitUser = await getCurrentGitUser();
 
-  userList.forEach(({ userName, userEmail }) => {
+  userList.forEach(({ userName, userEmail, alias }) => {
     let prefix = '';
 
     if (currentGitUser.userName === userName && currentGitUser.userEmail === userEmail) {
       prefix = '✔️';
     }
 
-    console.log(`${prefix}  username: ${userName} | email: ${userEmail}`);
+    console.log(`${prefix}  alias: ${alias} username: ${userName} | email: ${userEmail}`);
   });
 };

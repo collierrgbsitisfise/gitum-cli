@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
 const { lowDBService } = require('./../services');
 
-module.exports = (userName, userEmail) => {
-  const userAlreadyExist = lowDBService.findUserByUserNameAndEmail(userName, userEmail);
+module.exports = (userName, userEmail, alias) => {
+  const userAlreadyExist = lowDBService.findUserByAlias(alias);
 
   if (userAlreadyExist) {
-    console.log(`user '${userName}' already exists`);
+    console.log(`user '${alias}' already exists`);
     return;
   }
 
-  lowDBService.addNewUesr(userName, userEmail);
-  console.log(`new '${userName}' user was created.`);
+  lowDBService.addNewUesr(userName, userEmail, alias);
+  console.log(`new '${alias}' user was created.`);
 };

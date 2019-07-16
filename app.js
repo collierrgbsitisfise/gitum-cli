@@ -20,19 +20,19 @@ commander
   });
 
 commander
-  .command('new <userName> <userEmail>')
+  .command('new <userName> <userEmail> <alias>')
   .action(addNewUser);
 
 commander
-  .command('n <userName> <userEmail>')
+  .command('n <userName> <userEmail> <alias>')
   .action(addNewUser);
 
 commander
-  .command('delete <userNameOrEmail>')
+  .command('delete <alias>')
   .action(removeUser);
 
 commander
-  .command('d <userNameOrEmail>')
+  .command('d <alias>')
   .action(removeUser);
 
 commander

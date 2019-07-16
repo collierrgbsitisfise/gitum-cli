@@ -11,9 +11,9 @@ class LowDbService {
       .write();
   }
 
-  addNewUesr(userName, userEmail) {
+  addNewUesr(userName, userEmail, alias) {
     this.db.get('users')
-      .push({ userName, userEmail })
+      .push({ userName, userEmail, alias })
       .write();
   }
 
@@ -23,20 +23,12 @@ class LowDbService {
       .value();
   }
 
-  findUserByUserNameOrEmail(input) {
-    return this.db.get('users').find(
-      ({ userName, userEmail }) => input === userName || input === userEmail,
-    ).value();
+  findUserByAlias(alias) {
+    return this.db.get('users').find({ alias }).value();
   }
 
-  findUserByUserNameAndEmail(inputUserName, inputUserEmail) {
-    return this.db.get('users').find(
-      ({ userName, userEmail }) => inputUserName === userName && inputUserEmail === userEmail,
-    ).value();
-  }
-
-  deleteByEmail(userEmail) {
-    this.db.get('users').remove({ userEmail }).write();
+  deleteByEmail(alias) {
+    this.db.get('users').remove({ alias }).write();
   }
 }
 
