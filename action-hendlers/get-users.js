@@ -13,6 +13,6 @@ module.exports = async () => {
       prefix = '✔️';
     }
 
-    console.log(`${prefix}  alias: ${alias} username: ${userName} | email: ${userEmail}`);
+    console.log(`${prefix}  alias: ${alias} | username: ${userName} | email: ${userEmail}`);
   });
 };

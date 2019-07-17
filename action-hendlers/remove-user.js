@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
 const { lowDBService } = require('./../services');
 
-module.exports = (alas) => {
-  const value = lowDBService.findUserByAlias(alas);
+module.exports = (alias) => {
+  const value = lowDBService.findUserByAlias(alias);
 
   if (!value) {
-    console.log(`incorrect value '${alas}' - user was not found!`);
+    console.log(`incorrect value '${alias}' - user was not found!`);
     return;
   }
 
-  lowDBService.deleteByEmail(value.userEmail);
-  console.log(`user '${alas} was deleted'`);
+  lowDBService.deleteByEmail(alias);
+  console.log(`user '${alias} was deleted'`);
 };

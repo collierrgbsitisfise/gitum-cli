@@ -15,7 +15,7 @@ module.exports = async () => {
   const alias = value ? value.alias : defaultAlias;
 
   if (!value) {
-    lowDBService.addNewUesr(userName, userName, alias);
+    lowDBService.addNewUesr(userName, userEmail, alias);
   }
 
   console.log(`️️✔️  alias: ${alias} | username: ${userName} | email: ${userEmail}`);

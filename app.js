@@ -5,6 +5,7 @@ const {
   getUsers,
   getCurrentUser,
   removeUser,
+  setCurrentUser,
 } = require('./action-hendlers');
 
 commander
@@ -42,6 +43,14 @@ commander
 commander
   .command('c')
   .action(getCurrentUser);
+
+commander
+  .command('set')
+  .action(setCurrentUser);
+
+commander
+  .command('s')
+  .action(setCurrentUser);
 
 commander
   .command('list')
