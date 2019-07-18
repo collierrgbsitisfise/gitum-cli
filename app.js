@@ -6,19 +6,16 @@ const {
   getCurrentUser,
   removeUser,
   setCurrentUser,
+  helpInfo,
 } = require('./action-hendlers');
 
 commander
   .command('help')
-  .action(() => {
-    console.log('Help Docs');
-  });
+  .action(helpInfo);
 
 commander
   .command('h')
-  .action(() => {
-    console.log('Help Docs');
-  });
+  .action(helpInfo);
 
 commander
   .command('new <userName> <userEmail> <alias>')
@@ -45,11 +42,11 @@ commander
   .action(getCurrentUser);
 
 commander
-  .command('set')
+  .command('set <alias>')
   .action(setCurrentUser);
 
 commander
-  .command('s')
+  .command('s <alias>')
   .action(setCurrentUser);
 
 commander
