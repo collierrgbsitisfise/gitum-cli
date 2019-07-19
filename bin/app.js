@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /* eslint-disable no-console */
 const commander = require('commander');
 const {
@@ -7,7 +9,7 @@ const {
   removeUser,
   setCurrentUser,
   helpInfo,
-} = require('./action-hendlers');
+} = require('./../lib/action-hendlers');
 
 commander
   .command('help')
