@@ -8,7 +8,7 @@
     "eslint": "./node_modules/.bin/eslint app.js"
   },
   "bin": {
-    "gitum": "./bin/app.js"
+    "gum": "./bin/app.js"
   },
   "preferGlobal": true,
   "repository": {
