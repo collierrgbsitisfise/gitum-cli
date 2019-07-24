@@ -4,7 +4,7 @@ GITUM(git user namagement) - is a simple CLI tool which provide posibilty to man
 
 ### Install
 ```sh
-$ npm i gitum-cli
+$ npm i -g gitum-cli
 ```
 
 ### Usage
