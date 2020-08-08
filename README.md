@@ -1,6 +1,6 @@
 # GITUM-CLI
 
-GITUM(git user namagement) - is a simple CLI tool which provide posibilty to manage multiple git users on your machine
+GITUM(git user management) - is a simple CLI tool which provide possibility to manage multiple git users on your machine.
 
 ### Install
 ```sh
